@@ -32,13 +32,13 @@ public class UserController {
     }
     
     @PutMapping("/{id}")
-    public boolean updateUser(@PathVariable Long id, @RequestBody User user) {
+    public boolean updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         user.setId(id);
         return userService.updateById(user);
     }
     
     @DeleteMapping("/{id}")
-    public boolean deleteUser(@PathVariable Long id) {
+    public boolean deleteUser(@PathVariable("id") Long id) {
         return userService.removeById(id);
     }
     
